@@ -8,7 +8,7 @@ scipy
 scikit-learn
 statsmodels
 numba
-matplotlib>=2.2.*
+matplotlib>=2.2.0
 h5py
 pillow
 tqdm
