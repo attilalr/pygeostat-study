@@ -48,3 +48,20 @@ Refer to `www.ccgalberta.com <http://www.ccgalberta.com>`_
     :target: https://www.python.org/downloads/release/python-380
     :alt: Python Version
     :scale: 100%
+
+
+Using this fork:
++++++++++++++++++++
+
+Installing
+    pip install git+https://github.com/attilalr/pygeostat-study.git
+
+
+Using in Google Colab
+    try:
+      import pygeostat as gs
+    except:
+      !pip3 install git+https://github.com/attilalr/pygeostat-study.git
+
+      import pygeostat as gs
+
