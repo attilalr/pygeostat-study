@@ -54,14 +54,20 @@ Using this fork:
 +++++++++++++++++++
 
 Installing
+
+.. code-block:: python
+
     pip install git+https://github.com/attilalr/pygeostat-study.git
 
 
 Using in Google Colab
-    try:
-      import pygeostat as gs
-    except:
-      !pip3 install git+https://github.com/attilalr/pygeostat-study.git
 
-      import pygeostat as gs
+.. code-block:: python
+
+    try:
+        import pygeostat as gs
+    except:
+        !pip3 install git+https://github.com/attilalr/pygeostat-study.git
+
+        import pygeostat as gs
 
