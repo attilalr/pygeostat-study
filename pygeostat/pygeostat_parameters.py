@@ -915,11 +915,23 @@ class PlotStyle(Parameters):
 		from matplotlib import cbook
 		import warnings
 
-		if Parameters['config.ignore_mpl_warnings']:
-			warnings.filterwarnings("ignore", category=cbook.MatplotlibDeprecationWarning)
-		else:
-			warnings.filterwarnings('default', category=cbook.MatplotlibDeprecationWarning)
 
+		#https://matplotlib.org/stable/api/prev_api_changes/api_changes_3.8.0.html#removals
+		#use matplotlib.MatplotlibDeprecationWarning
+		import matplotlib
+ 
+		if matplotlib.sys.version_info >= (3, 8):
+			if Parameters['config.ignore_mpl_warnings']:
+				warnings.filterwarnings("ignore", category=matplotlib.MatplotlibDeprecationWarning)
+			else:
+				warnings.filterwarnings('default', category=matplotlib.MatplotlibDeprecationWarning)
+		else:
+			if Parameters['config.ignore_mpl_warnings']:
+				warnings.filterwarnings("ignore", category=cbook.MatplotlibDeprecationWarning)
+			else:
+				warnings.filterwarnings('default', category=cbook.MatplotlibDeprecationWarning)
+
+		
 		# Required in order to restore mlp rcParams
 		self._old_rcParams = self.mpl.rcParams.copy()
 		if style in (None, False):
