@@ -14,6 +14,6 @@ pillow
 tqdm
 nbformat
 nbconvert
-jupyter-client
-jupyter
+#jupyter-client
+#jupyter
 temp
